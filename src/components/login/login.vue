@@ -22,7 +22,7 @@
                         <div class="page-login--content-footer">
                             <p class="page-login--content-footer-copyright"
                                style="font-size:26px;font-weight:700;font-family:KaiTi">
-                                测试平台
+                                接口自动化测试平台
                             </p>
                         </div>
                         <el-card shadow="never">
