@@ -174,7 +174,7 @@
         // 登录表单
         .page-login--form {
             margin: auto;
-            width: 280px;
+            width: 400px;
             margin-top: 10%;
             // 卡片
             .el-card {
