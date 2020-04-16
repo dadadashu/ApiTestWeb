@@ -81,8 +81,8 @@
                             <el-button type="primary" size="mini" v-if="tableData[scope.$index]['status'] !== '创建'"
                                        @click.native="removeTask(tableData[scope.$index]['id'])">移除
                             </el-button>
-                            <el-button type="success" size="mini" :loading="scope.row.isShow"
-                                       @click.native="runNow(scope.row)">单次运行
+                            <el-button type="success" size="mini" :loading="runStatus"
+                                       @click.native="tableData[scope.$index]['id']">单次运行
                             </el-button>
                             <el-button type="danger" icon="el-icon-delete" size="mini"
                                        @click.native="sureView(delTask,tableData[scope.$index]['id'],tableData[scope.$index]['task_name'])">
@@ -398,13 +398,9 @@
                     }
                 )
             },
-            runNow(item) {
-                if (!item.isShow) {
-                    this.$set(item, 'isShow', true)
-                } else {
-                    item.isShow = true
-                }
-                this.$axios.post(this.$api.runTaskApi, {'id': item.id}).then((response) => {
+            runNow(id) {
+                this.runStatus = true;
+                this.$axios.post(this.$api.runTaskApi, {'id': id}).then((response) => {
                         if (this.messageShow(this, response)) {
                             this.findTask();
                             let {href} = this.$router.resolve({
@@ -413,8 +409,7 @@
                             });
                             window.open(href, '_blank');
                         }
-                        // this.runStatus = false;
-                        item.isShow = false
+                        this.runStatus = false;
                     }
                 )
             },
