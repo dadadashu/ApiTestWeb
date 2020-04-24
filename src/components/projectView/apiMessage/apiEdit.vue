@@ -422,9 +422,10 @@
                     choiceUrl: '基础url1',
                     choiceType: 'data',
                 },
-                comparators: [{'value': 'equals'}, {'value': 'less_than'}, {'value': 'less_than_or_equals'},
-                    {'value': 'greater_than'}, {'value': 'greater_than_or_equals'}, {'value': 'not_equals'},
-                    {'value': 'string_equals'}, {'value': 'length_equals'}, {'value': 'length_greater_than'},
+                comparators: [{'value': 'equals'}, {'value': 'equals_eval_string'}, {'value': 'less_than'},
+                    {'value': 'less_than_or_equals'}, {'value': 'greater_than'}, {'value': 'greater_than_or_equals'},
+                    {'value': 'not_equals'}, {'value': 'string_equals'},{'value': 'is_not'},
+                    {'value': 'length_equals'}, {'value': 'length_greater_than'},
                     {'value': 'count_greater_than_or_equals'}, {'value': 'length_less_than'},
                     {'value': 'length_less_than_or_equals'}],
                 apiMsgData: {
